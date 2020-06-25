@@ -21,10 +21,10 @@ Route::get('/pokemon/reset', 'TestController@reset');
 
 Route::post('/pokemon', 'TestController@store');
 
-Route::get('pokemondb', function () {
-    return view('viewpokemondb');
-});
+// Route::get('pokemondb', function () {
+//     return view('viewpokemondb');
+// });
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('viewpokemondb');
 });
