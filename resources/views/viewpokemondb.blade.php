@@ -16,7 +16,7 @@
         <button type="submit">Add random pokémon</button>
     </form>
 
-@if ($pokes)
+@if (isset($pokes))
     <div class="pokedex">
         @foreach ($pokes as $poke)
             <div class="poke">
