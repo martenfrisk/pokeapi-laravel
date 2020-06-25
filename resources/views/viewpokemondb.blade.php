@@ -16,13 +16,17 @@
         <button type="submit">Add random pokémon</button>
     </form>
 
-<div class="pokedex">
-    @foreach ($pokes as $poke)
-        <div class="poke">
-            <p class="pokename">{{ $poke->name }}</p>
-            <img src={{ $poke->sprites }} />
-            <a href={{ action('TestController@reset', ['name' => $poke->name]) }}>Remove this pokémon</a>
-        </div>
-    @endforeach
-</div>
+@if ($pokes)
+    <div class="pokedex">
+        @foreach ($pokes as $poke)
+            <div class="poke">
+                <p class="pokename">{{ $poke->name }}</p>
+                <img src={{ $poke->sprites }} />
+                <a href={{ action('TestController@reset', ['name' => $poke->name]) }}>Remove this pokémon</a>
+            </div>
+        @endforeach
+    </div>
+@else
+    <div>Your Pokédex is empty. Please add a pokémon.</div>
+@endif
 </div>
