@@ -2,7 +2,7 @@
 
 <div id="example"></div>
 <div class="container">
-    <form method="post" action="/pokemon" >
+    <form method="get" action="/" >
     {{ csrf_field() }}
         <label for="addpokemon">
             Add pokemon:
@@ -10,7 +10,7 @@
         <input type="text" id="addpokemon" placeholder="Enter pokémon name..." name="addpokemon" />
         <button type="submit">Add</button>
     </form>
-    <form method="post" action="/pokemon" >
+    <form method="post" action="/" >
     {{ csrf_field() }}
         <input type="number" id="addpokemon" class="hideme" name="addpokemon" value={{ rand(1, 151) }} />
         <button type="submit">Add random pokémon</button>

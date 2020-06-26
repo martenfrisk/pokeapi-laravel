@@ -38,6 +38,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 39rem;
 }
 
 .poke {
@@ -45,9 +46,11 @@ button {
   align-items: center;
   flex-direction: column;
   margin-right: 1rem;
+  margin-top: 1rem;
   border-radius: 5px;
   background-color: lightgray;
   padding: 10px 5px;
+  width: 12rem;
 }
 
 .pokename {
