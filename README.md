@@ -1,6 +1,6 @@
 Still trying to figure out how to deploy this repo on heroku. Meanwhile, here's a gif of the site in action:
 
-<img alt="" width="400" src="https://i.imgur.com/rickVXS.gifv" />
+<img alt="" width="400" src="./public/pokeapi.gif" />
 
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
