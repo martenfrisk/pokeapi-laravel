@@ -13,18 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'TestController@index');
+Route::get('/pokemon', 'TestController@index');
 
 // Route::get('/save', 'TestController@store');
 
-Route::get('/reset', 'TestController@reset');
+Route::get('/pokemon/reset', 'TestController@reset');
 
-Route::get('/', 'TestController@store');
+Route::get('/pokemon/save', 'TestController@store');
 
 // Route::get('pokemondb', function () {
 //     return view('viewpokemondb');
 // });
 
-// Route::get('/', function () {
-//     return view('viewpokemondb');
-// });
+ Route::get('/', function () {
+    return view('viewpokemondb');
+ });

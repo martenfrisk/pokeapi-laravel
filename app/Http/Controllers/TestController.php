@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\RequestException;
 use Illuminate\Http\Request;
 use App\Pokemon;
 use GuzzleHttp\Client;
@@ -29,10 +31,16 @@ class TestController extends Controller {
         $url = 'https://pokeapi.co/api/v2/pokemon/' . $request->addpokemon;
         try {
             $res = $client->get($url)->getBody();
-        } catch (Guzzle\Http\ClientException $e) {
-            echo 'Error: ' . $e->getResponse();
+        } catch (ClientException $e) {
+            echo 'ClientException Error: ' . $e->getResponse()->getBody();
+            $pokes = Pokemon::all();
+            return view("viewpokemondb", ['pokes' => $pokes])->withErrors($e->getResponse());
+        } catch (RequestException $e) {
+            echo 'RequestException Error: ' . $e->getResponse()->getBody();
+            $pokes = Pokemon::all();
+            return view("viewpokemondb", ['pokes' => $pokes]);
         }
-        $pokemon = Pokemon::firstOrCreate(
+        Pokemon::firstOrCreate(
             ['name' => json_decode($res)->name],
             [
                 'base_experience' => json_decode($res)->base_experience,
