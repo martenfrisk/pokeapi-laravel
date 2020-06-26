@@ -4,8 +4,6 @@ Built with Laravel Homestead. Still trying to figure out how to deploy this repo
 Here's the API with GET function. '/api/squad' shows all items in table. '/api/squad/{id}' shows the indivual pokémon with the corresponding id. 
 <img alt="" width="100%" src="./public/pokeapi-getapi.gif" />
 </p>
-1. use an external REST API (for example https://openweathermap.org/guide) to fetch information from some service, and integrate it into your web page. It doesn't have to be weather, feel free to choose something relevant to your application
-2. create a REST endpoint that responds to a GET request, returning a list of items from your application (e.g. /api/foo ) as well as accepting an item ID and returning detailed information about that item (e.g. /api/foo/123  where 123 is the item ID)
 
 
 ## Original Laravel readme
