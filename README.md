@@ -1,3 +1,10 @@
+Still trying to figure out how to deploy this repo on heroku. Meanwhile, here's a gif of the site in action:
+
+<video width="400">
+<source src="https://i.imgur.com/rickVXS.mp4" type="video/mp4>
+Your browser does not seem to support videos. Go to https://i.imgur.com/rickVXS.mp4
+</video>
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
