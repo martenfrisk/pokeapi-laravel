@@ -10978,6 +10978,11 @@ button {
   font-size: 1.5rem;
 }
 
+.pokeID {
+  font-size: 0.5rem;
+  display: inline-block;
+}
+
 .stats {
   display: flex;
   justify-content: center;

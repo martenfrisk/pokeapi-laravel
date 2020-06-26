@@ -24,7 +24,8 @@
         <div class="pokedex">
             @foreach ($pokes as $poke)
                 <div class="poke">
-                    <p class="pokename">{{ $poke->name }}</p>
+                    <div class="pokename">{{ $poke->name }}</div>
+                    <div class="pokeID">id: {{ $poke->id }}</div>
                     <img src={{ $poke->sprites }} />
                     <div class="stats">
                         <div>
