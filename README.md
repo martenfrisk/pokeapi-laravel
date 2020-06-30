@@ -1,4 +1,7 @@
-Built with Laravel Homestead. Still trying to figure out how to deploy this repo on heroku. Meanwhile, here's a gif of the site in action:
+View deployed version here: http://lit-sierra-69506.herokuapp.com/pokemon
+API access here: http://lit-sierra-69506.herokuapp.com/api/squad + /{id} for individual pokémon.
+
+Built with Laravel Homestead. Gif of the site in action:
 <p align="center">
 <img alt="" width="100%" src="./public/pokeapi2.gif" />
 Here's the API with GET function. '/api/squad' shows all items in table. '/api/squad/{id}' shows the indivual pokémon with the corresponding id. 
