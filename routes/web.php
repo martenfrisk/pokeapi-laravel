@@ -21,5 +21,5 @@ Route::get('/pokemon/reset', 'TestController@reset');
 Route::get('/pokemon/save', 'TestController@store');
 
 Route::get('/', function () {
-    return view('viewpokemondb');
+    return redirect('/pokemon');
 });
