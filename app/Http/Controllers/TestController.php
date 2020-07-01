@@ -27,18 +27,20 @@ class TestController extends Controller {
     public function store(Request $request) {
 
         $client = new Client(['base_uri' => 'https://pokeapi.co/api/v2/']);
-
-        $url = 'https://pokeapi.co/api/v2/pokemon/' . $request->input('addpokemon')[0];
-        try {
-            $res = $client->get($url)->getBody();
-        } catch (ClientException $e) {
-            echo 'ClientException Error: ' . $e->getResponse()->getBody();
-            $pokes = Pokemon::all();
-            return view("viewpokemondb", ['pokes' => $pokes])->withErrors($e->getResponse());
-        } catch (RequestException $e) {
-            echo 'RequestException Error: ' . $e->getResponse()->getBody();
-            $pokes = Pokemon::all();
-            return view("viewpokemondb", ['pokes' => $pokes]);
+        // $poke = $request->addpokemon;
+        foreach ($request->addpokemon as $poke) {
+            $url = 'https://pokeapi.co/api/v2/pokemon/' . $poke;
+            try {
+                $res = $client->get($url)->getBody();
+            } catch (ClientException $e) {
+                echo 'ClientException Error: ' . $e->getResponse()->getBody();
+                $pokes = Pokemon::all();
+                return view("viewpokemondb", ['pokes' => $pokes])->withErrors($e->getResponse());
+            } catch (RequestException $e) {
+                echo 'RequestException Error: ' . $e->getResponse()->getBody();
+                $pokes = Pokemon::all();
+                return view("viewpokemondb", ['pokes' => $pokes]);
+            }
         }
         Pokemon::firstOrCreate(
             ['name' => json_decode($res)->name],
