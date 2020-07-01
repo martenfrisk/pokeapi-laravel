@@ -27,27 +27,14 @@ class TestController extends Controller {
     public function store(Request $request) {
 
         $client = new Client(['base_uri' => 'https://pokeapi.co/api/v2/']);
-        // $poke = $request->addpokemon;
-        if(empty($request)) {
+        if(empty($request))
+        {
             $pokes = Pokemon::all();
             return view("viewpokemondb", ['pokes' => $pokes]);
         }
-        elseif(isset($request->addpokemon)) {
-            $url = 'https://pokeapi.co/api/v2/pokemon/' . $request->addpokemon[0];
-            try {
-                $res = $client->get($url)->getBody();
-            } catch (ClientException $e) {
-                echo 'ClientException Error: ' . $e->getResponse()->getBody();
-                $pokes = Pokemon::all();
-                return view("viewpokemondb", ['pokes' => $pokes]);
-            } catch (RequestException $e) {
-                echo 'RequestException Error: ' . $e->getResponse()->getBody();
-                $pokes = Pokemon::all();
-                return view("viewpokemondb", ['pokes' => $pokes]);
-            }
-        }
-        elseif(isset($request->addrandom)) {
-            $url = 'https://pokeapi.co/api/v2/pokemon/' . $request->addrandom[0];
+        else
+        {
+            $url = 'https://pokeapi.co/api/v2/pokemon/' . $request->addpokemon;
             try {
                 $res = $client->get($url)->getBody();
             } catch (ClientException $e) {
