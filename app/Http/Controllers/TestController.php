@@ -58,10 +58,10 @@ class TestController extends Controller {
                 'sprites' => json_decode($res)->sprites->front_default
             ]
         );
-        if($request->addpokemon->wasRecentlyCreated){
-            echo $request->addpokemon . 'was added!';
+        if($tolower->wasRecentlyCreated){
+            echo $tolower . 'was added!';
         } else {
-            echo $request->addpokemon . 'has already been added. Please choose another pokémon.';
+            echo $tolower . 'has already been added. Please choose another pokémon.';
         }
         // $pokemon->save();
         $pokes = Pokemon::all();
