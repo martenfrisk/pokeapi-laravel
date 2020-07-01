@@ -34,7 +34,7 @@ class TestController extends Controller {
         }
         else
         {
-            $tolower = array_map('strtolower', $request->addpokemon);
+            $tolower = strtolower($request->addpokemon);
             $url = 'https://pokeapi.co/api/v2/pokemon/' . $tolower;
             try {
                 $res = $client->get($url)->getBody();
