@@ -48,7 +48,7 @@ class TestController extends Controller {
                 return view("viewpokemondb", ['pokes' => $pokes]);
             }
         }
-        Pokemon::create(
+        Pokemon::firstOrCreate(
             ['name' => json_decode($res)->name],
             [
                 'base_experience' => json_decode($res)->base_experience,
@@ -58,7 +58,6 @@ class TestController extends Controller {
                 'sprites' => json_decode($res)->sprites->front_default
             ]
         );
-        // $pokemon->save();
         $pokes = Pokemon::all();
         return view("viewpokemondb", ['pokes' => $pokes]);
 
