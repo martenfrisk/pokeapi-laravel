@@ -48,7 +48,7 @@ class TestController extends Controller {
                 return view("viewpokemondb", ['pokes' => $pokes]);
             }
         }
-        Pokemon::firstOrCreate(
+        Pokemon::create(
             ['name' => json_decode($res)->name],
             [
                 'base_experience' => json_decode($res)->base_experience,
@@ -58,11 +58,6 @@ class TestController extends Controller {
                 'sprites' => json_decode($res)->sprites->front_default
             ]
         );
-        if($tolower->wasRecentlyCreated){
-            echo $tolower . 'was added!';
-        } else {
-            echo $tolower . 'has already been added. Please choose another pokémon.';
-        }
         // $pokemon->save();
         $pokes = Pokemon::all();
         return view("viewpokemondb", ['pokes' => $pokes]);
