@@ -7,12 +7,12 @@
         <label for="addpokemon">
             Add pokemon:
         </label>
-        <input type="text" id="addpokemon" placeholder="Enter pokémon name..." name="addpokemon[]"/>
+        <input type="text" id="addpokemon" placeholder="Enter pokémon name..." name="addpokemon"/>
         <button type="submit">Add</button>
     </form>
     <form method="get" action="/pokemon/save">
         {{ csrf_field() }}
-        <input type="number" id="addrandom" class="hideme" name="addpokemon[]" value={{ rand(1, 151) }} />
+        <input type="number" id="addrandom" class="hideme" name="addrandom" value={{ rand(1, 151) }} />
         <button type="submit">Add random pokémon</button>
     </form>
     @if ($errors->any())
