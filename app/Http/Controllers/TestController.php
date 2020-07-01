@@ -33,7 +33,7 @@ class TestController extends Controller {
             return view("viewpokemondb", ['pokes' => $pokes]);
         }
         elseif(isset($request->addpokemon)) {
-            $url = 'https://pokeapi.co/api/v2/pokemon/' . $request->addpokemon;
+            $url = 'https://pokeapi.co/api/v2/pokemon/' . $request->addpokemon[0];
             try {
                 $res = $client->get($url)->getBody();
             } catch (ClientException $e) {
@@ -47,7 +47,7 @@ class TestController extends Controller {
             }
         }
         elseif(isset($request->addrandom)) {
-            $url = 'https://pokeapi.co/api/v2/pokemon/' . $request->addrandom;
+            $url = 'https://pokeapi.co/api/v2/pokemon/' . $request->addrandom[0];
             try {
                 $res = $client->get($url)->getBody();
             } catch (ClientException $e) {
