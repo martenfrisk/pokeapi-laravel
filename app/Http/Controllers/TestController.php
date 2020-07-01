@@ -27,7 +27,7 @@ class TestController extends Controller {
     public function store(Request $request) {
 
         $client = new Client(['base_uri' => 'https://pokeapi.co/api/v2/']);
-        if(empty($request->addpokeon))
+        if(empty($request->addpokemon))
         {
             $pokes = Pokemon::all();
             return view("viewpokemondb", ['pokes' => $pokes]);
