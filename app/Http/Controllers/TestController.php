@@ -39,7 +39,7 @@ class TestController extends Controller {
             } catch (ClientException $e) {
                 echo 'ClientException Error: ' . $e->getResponse()->getBody();
                 $pokes = Pokemon::all();
-                return view("viewpokemondb", ['pokes' => $pokes])->withErrors($e->getResponse());
+                return view("viewpokemondb", ['pokes' => $pokes]);
             } catch (RequestException $e) {
                 echo 'RequestException Error: ' . $e->getResponse()->getBody();
                 $pokes = Pokemon::all();
@@ -53,7 +53,7 @@ class TestController extends Controller {
             } catch (ClientException $e) {
                 echo 'ClientException Error: ' . $e->getResponse()->getBody();
                 $pokes = Pokemon::all();
-                return view("viewpokemondb", ['pokes' => $pokes])->withErrors($e->getResponse());
+                return view("viewpokemondb", ['pokes' => $pokes]);
             } catch (RequestException $e) {
                 echo 'RequestException Error: ' . $e->getResponse()->getBody();
                 $pokes = Pokemon::all();
