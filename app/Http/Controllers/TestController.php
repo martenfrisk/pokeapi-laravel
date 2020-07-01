@@ -27,7 +27,7 @@ class TestController extends Controller {
     public function store(Request $request) {
 
         $client = new Client(['base_uri' => 'https://pokeapi.co/api/v2/']);
-        if(empty($request))
+        if(empty($request->addpokeon))
         {
             $pokes = Pokemon::all();
             return view("viewpokemondb", ['pokes' => $pokes]);
@@ -58,6 +58,11 @@ class TestController extends Controller {
                 'sprites' => json_decode($res)->sprites->front_default
             ]
         );
+        if($request->addpokemon->wasRecentlyCreated){
+            echo $request->addpokemon . 'was added!';
+        } else {
+            echo $request->addpokemon . 'has already been added. Please choose another pokémon.';
+        }
         // $pokemon->save();
         $pokes = Pokemon::all();
         return view("viewpokemondb", ['pokes' => $pokes]);
