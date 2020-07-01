@@ -28,7 +28,7 @@ class TestController extends Controller {
 
         $client = new Client(['base_uri' => 'https://pokeapi.co/api/v2/']);
 
-        $url = 'https://pokeapi.co/api/v2/pokemon/' . $request->input('addpokemon');
+        $url = 'https://pokeapi.co/api/v2/pokemon/' . $request->input('addpokemon')[0];
         try {
             $res = $client->get($url)->getBody();
         } catch (ClientException $e) {
